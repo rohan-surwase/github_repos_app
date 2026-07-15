@@ -6,7 +6,7 @@ class AppConstants {
 
   /// The GitHub username whose public repositories are fetched and shown.
   /// This is the single place you need to edit to retarget the app.
-  static const String githubUsername = 'octocat';
+  static const String githubUsername = 'rohan-surwase';
 
   /// GitHub REST API base URL.
   static const String githubApiBase = 'https://api.github.com';
