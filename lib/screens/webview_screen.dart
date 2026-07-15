@@ -58,8 +58,9 @@ class _WebviewScreenState extends State<WebviewScreen> {
             _handleLoadFailure();
           },
           onHttpError: (error) {
-            _handleLoadFailure();
-          },
+  if (error.request?.isMainFrame == false) return;
+  _handleLoadFailure();
+},
         ),
       )
       ..loadRequest(Uri.parse(widget.primaryUrl));
