@@ -58,8 +58,8 @@ class _WebviewScreenState extends State<WebviewScreen> {
             _handleLoadFailure();
           },
           onHttpError: (error) {
-  if (error.request?.isMainFrame == false) return;
-  _handleLoadFailure();
+  // Ignore HTTP errors on individual resources (images, fonts, etc.)
+  // Only real page-load failures (via onWebResourceError) trigger fallback.
 },
         ),
       )
