@@ -15,7 +15,6 @@ class RepoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final hasDescription = (repository.description ?? '').trim().isNotEmpty;
 
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -44,22 +43,6 @@ class RepoCard extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-            const SizedBox(height: 8),
-            Text(
-              hasDescription
-                  ? repository.description!.trim()
-                  : 'No description provided.',
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: hasDescription
-                    ? theme.colorScheme.onSurfaceVariant
-                    : theme.colorScheme.onSurfaceVariant.withValues(
-                        alpha: 0.6,
-                      ),
-                fontStyle: hasDescription ? FontStyle.normal : FontStyle.italic,
-              ),
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
             ),
             if (repository.language != null) ...[
               const SizedBox(height: 10),
